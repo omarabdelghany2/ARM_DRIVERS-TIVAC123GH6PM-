@@ -21,33 +21,14 @@ Target DLL:      lmidk-agdi.dll V???
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-C:\Users\pc\Documents\Arm_WorkSpace\test\test1.uvprojx
-Project File Date:  12/02/2022
+C:\Users\pc\Documents\Arm_WorkSpace\ARM_DRIVERS-TIVAC123GH6PM-\arm_drivers\test1.uvprojx
+Project File Date:  12/13/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
+Note: source file '.\Interrupt.c' - object file renamed from '.\Objects\Interrupt.o' to '.\Objects\interrupt_1.o'.
 Note: source file '.\main.c' - object file renamed from '.\Objects\main.o' to '.\Objects\main_1.o'.
-main.c(2): warning: In file included from...
-./GPIO.h(4): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-main.c(2): warning: In file included from...
-./GPIO.h(5): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-main.c(18): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
-        GPIO_PIN_init_st mystruct ={OUTPUT,1,PORTF,DRIVE_8mA,NO_PU_PD};
-                         ^
-main.c(2): warning: In file included from...
-./GPIO.h(28): warning: padding struct 'GPIO_PIN_init_st' with 1 byte to align 'DRIVE' [-Wpadded]
-        GPIO_DRIVE DRIVE;
-                   ^
-4 warnings generated.
-compiling main.c...
 clock.c(1): warning: In file included from...
 ./clock.h(4): warning: In file included from...
 ./REGISTERS.h(5): warning: In file included from...
@@ -60,6 +41,11 @@ clock.c(1): warning: In file included from...
 ./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
         
         ^
+clock.c(1): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(145): warning: '/*' within block comment [-Wcomment]
+/*
+^
 clock.c(14): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
             CLRBIT(RCC , 5);
             ^~~~~~~~~~~~~~~
@@ -87,8 +73,176 @@ clock.c(95): warning: implicit conversion changes signedness: 'int' to 'unsigned
 clock.c(127): warning: no newline at end of file [-Wnewline-eof]
         }
          ^
-7 warnings generated.
+8 warnings generated.
 compiling clock.c...
+main.c(2): warning: In file included from...
+./APP.h(4): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(5): warning: In file included from...
+./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
+ 
+ ^
+main.c(2): warning: In file included from...
+./APP.h(4): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(6): warning: In file included from...
+./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+main.c(2): warning: In file included from...
+./APP.h(4): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(145): warning: '/*' within block comment [-Wcomment]
+/*
+^
+main.c(2): warning: In file included from...
+./APP.h(5): warning: In file included from...
+./Timer.h(8): warning: In file included from...
+./Interrupt.h(6): warning: no newline at end of file [-Wnewline-eof]
+#endif /* INTERRUPT_H_ */
+                         ^
+main.c(2): warning: In file included from...
+./APP.h(5): warning: In file included from...
+./Timer.h(14): warning: no newline at end of file [-Wnewline-eof]
+#endif /* TIMER_H_ */
+                     ^
+main.c(2): warning: In file included from...
+./APP.h(8): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void APP_init();
+             ^
+              void
+./APP.h(11): warning: no newline at end of file [-Wnewline-eof]
+#endif /* APP_APP_H_ */
+                       ^
+main.c(6): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+APP_Set_On_Off_time(0.1,1);     
+~~~~~~~~~~~~~~~~~~~ ^~~
+8 warnings generated.
+compiling main.c...
+out_hex(59): warning: // comments are not allowed in this language [-Wcomment]
+  { 0x6BA8FDD2U, &imageFileData[0U]   },    // "Interrupt.h"
+                                            ^
+1 warning generated.
+compiling out_hex...
+Interrupt.c(1): warning: ISO C requires a translation unit to contain at least one declaration [-Wempty-translation-unit]
+1 warning generated.
+compiling Interrupt.c...
+APP.c(1): warning: In file included from...
+./APP.h(4): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(5): warning: In file included from...
+./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
+ 
+ ^
+APP.c(1): warning: In file included from...
+./APP.h(4): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(6): warning: In file included from...
+./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+APP.c(1): warning: In file included from...
+./APP.h(4): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(145): warning: '/*' within block comment [-Wcomment]
+/*
+^
+APP.c(1): warning: In file included from...
+./APP.h(5): warning: In file included from...
+./Timer.h(8): warning: In file included from...
+./Interrupt.h(6): warning: no newline at end of file [-Wnewline-eof]
+#endif /* INTERRUPT_H_ */
+                         ^
+APP.c(1): warning: In file included from...
+./APP.h(5): warning: In file included from...
+./Timer.h(14): warning: no newline at end of file [-Wnewline-eof]
+#endif /* TIMER_H_ */
+                     ^
+APP.c(1): warning: In file included from...
+./APP.h(8): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void APP_init();
+             ^
+              void
+./APP.h(11): warning: no newline at end of file [-Wnewline-eof]
+#endif /* APP_APP_H_ */
+                       ^
+APP.c(5): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void APP_init()
+             ^
+              void
+APP.c(8): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        GPIO_PIN_init_st mystruct2 ={OUTPUT,2,PORTF,DRIVE_8mA,NO_PU_PD};
+                         ^
+APP.c(5): warning: no previous prototype for function 'APP_init' [-Wmissing-prototypes]
+void APP_init()
+     ^
+./APP.h(8): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+void APP_init();
+     ^
+              void
+APP.c(1): warning: In file included from...
+./APP.h(6): warning: In file included from...
+./GPIO.h(28): warning: padding struct 'GPIO_PIN_init_st' with 1 byte to align 'DRIVE' [-Wpadded]
+        GPIO_DRIVE DRIVE;
+                   ^
+APP.c(23): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+APP.c(14): warning: function 'APP_Set_On_Off_time' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+13 warnings generated.
+compiling APP.c...
+Timer.c(1): warning: In file included from...
+./Timer.h(4): warning: In file included from...
+./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
+ 
+ ^
+Timer.c(1): warning: In file included from...
+./Timer.h(5): warning: In file included from...
+./REGISTERS.h(6): warning: In file included from...
+./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+Timer.c(1): warning: In file included from...
+./Timer.h(5): warning: In file included from...
+./REGISTERS.h(145): warning: '/*' within block comment [-Wcomment]
+/*
+^
+Timer.c(1): warning: In file included from...
+./Timer.h(8): warning: In file included from...
+./Interrupt.h(6): warning: no newline at end of file [-Wnewline-eof]
+#endif /* INTERRUPT_H_ */
+                         ^
+Timer.c(1): warning: In file included from...
+./Timer.h(14): warning: no newline at end of file [-Wnewline-eof]
+#endif /* TIMER_H_ */
+                     ^
+Timer.c(3): warning: no previous extern declaration for non-static variable 'overflow' [-Wmissing-variable-declarations]
+float overflow=0;
+      ^
+Timer.c(3): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float overflow=0;
+^
+Timer.c(12): warning: // comments are not allowed in this language [-Wcomment]
+        REG(SYSTICK_BASE+SYSTICK_RELOAD)=400000-1;//4M give 1 seconds so 400k GIVES 0.1 SECOND
+                                                  ^
+Timer.c(21): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void SysTick_Handler () 
+                     ^
+                      void
+Timer.c(24): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+Timer.c(21): warning: no previous prototype for function 'SysTick_Handler' [-Wmissing-prototypes]
+void SysTick_Handler () 
+     ^
+Timer.c(21): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void SysTick_Handler () 
+^
+static 
+10 warnings generated.
+compiling Timer.c...
 GPIO.c(1): warning: In file included from...
 ./GPIO.h(4): warning: In file included from...
 ./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
@@ -100,6 +254,11 @@ GPIO.c(1): warning: In file included from...
 ./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
         
         ^
+GPIO.c(1): warning: In file included from...
+./GPIO.h(5): warning: In file included from...
+./REGISTERS.h(145): warning: '/*' within block comment [-Wcomment]
+/*
+^
 GPIO.c(20): warning: // comments are not allowed in this language [-Wcomment]
         //1)
         ^
@@ -125,8 +284,9 @@ GPIO.c(239): warning: implicit conversion loses integer precision: 'unsigned lon
 GPIO.c(242): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
                                 value=REG(GPIO_PORTF_DATA_R+0x3FC)&(1<<pin);
                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-10 warnings generated.
+11 warnings generated.
 compiling GPIO.c...
+assembling startup_TM4C123.s...
 RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
 C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
 C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
@@ -266,11 +426,10 @@ RTE/Device/TM4C123GH6PM/system_TM4C123.c(19): warning: // comments are not allow
 ^
 45 warnings generated.
 compiling system_TM4C123.c...
-assembling startup_TM4C123.s...
 linking...
-Program Size: Code=3464 RO-data=636 RW-data=0 ZI-data=608  
+Program Size: Code=3324 RO-data=636 RW-data=0 ZI-data=616  
 FromELF: creating hex file...
-".\Objects\test1.axf" - 0 Error(s), 66 Warning(s).
+".\Objects\test1.axf" - 0 Error(s), 97 Warning(s).
 
 <h2>Software Packages used:</h2>
 

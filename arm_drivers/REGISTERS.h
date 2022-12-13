@@ -117,6 +117,16 @@ CLOCK REGISTERS
 #define GPIOHBCTL    (*((volatile uint32*)0x400FE06C))/*this register ti configure your bus*/
 #define RCGCGPIO     (*((volatile uint32*)0x400FE608)) /*this register to enable your clock or disable it */
 #define RCC          (*((volatile uint32*)0x400FE060))	 /* to choose the division in your clock*/
-											
+	
+/*
+
+SYSTICK REGISTERS
+*/
+
+#define SYSTICK_BASE						0xE000E000
+
+#define SYSTICK_CTRL						0x010
+#define SYSTICK_RELOAD					0x014
+#define	SYSTICK_CURRENT					0x018
 
 #endif	/* REGISTERS_H_ */
