@@ -1,5 +1,4 @@
 --cpu=Cortex-M4.fp.sp
-".\objects\out_hex.o"
 ".\objects\clock.o"
 ".\objects\gpio.o"
 ".\objects\timer.o"

@@ -1,6 +1,7 @@
 #ifndef TIMER_H_
 #define TIMER_H_
 
+#include "GPIO.h"
 #include "CONFIG.h"
 #include "REGISTERS.h"
 #include "STD_Types.h"

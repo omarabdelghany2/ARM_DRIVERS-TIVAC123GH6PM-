@@ -22,18 +22,51 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 C:\Users\pc\Documents\Arm_WorkSpace\ARM_DRIVERS-TIVAC123GH6PM-\arm_drivers\test1.uvprojx
-Project File Date:  12/13/2022
+Project File Date:  12/15/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
 Note: source file '.\Interrupt.c' - object file renamed from '.\Objects\Interrupt.o' to '.\Objects\interrupt_1.o'.
 Note: source file '.\main.c' - object file renamed from '.\Objects\main.o' to '.\Objects\main_1.o'.
-out_hex(59): warning: // comments are not allowed in this language [-Wcomment]
-  { 0x6BA8FDD2U, &imageFileData[0U]   },    // "Interrupt.h"
-                                            ^
-1 warning generated.
-compiling out_hex...
+GPIO.c(1): warning: In file included from...
+./GPIO.h(4): warning: In file included from...
+./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
+ 
+ ^
+GPIO.c(1): warning: In file included from...
+./GPIO.h(5): warning: In file included from...
+./REGISTERS.h(6): warning: In file included from...
+./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+GPIO.c(20): warning: // comments are not allowed in this language [-Wcomment]
+        //1)
+        ^
+GPIO.c(1): warning: In file included from...
+./GPIO.h(28): warning: padding struct 'GPIO_PIN_init_st' with 1 byte to align 'DRIVE' [-Wpadded]
+        GPIO_DRIVE DRIVE;
+                   ^
+GPIO.c(227): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                value=REG(GPIO_PORTA_DATA_R+0x3FC)&(1<<pin);
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+GPIO.c(230): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                value=REG(GPIO_PORTB_DATA_R+0x3FC)&(1<<pin);
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+GPIO.c(233): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                value=REG(GPIO_PORTC_DATA_R+0x3FC)&(1<<pin);
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+GPIO.c(236): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                value=REG(GPIO_PORTD_DATA_R+0x3FC)&(1<<pin);
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+GPIO.c(239): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                value=REG(GPIO_PORTE_DATA_R+0x3FC)&(1<<pin);
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+GPIO.c(242): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                value=REG(GPIO_PORTF_DATA_R+0x3FC)&(1<<pin);
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+10 warnings generated.
+compiling GPIO.c...
 clock.c(1): warning: In file included from...
 ./clock.h(4): warning: In file included from...
 ./REGISTERS.h(5): warning: In file included from...
@@ -75,168 +108,6 @@ clock.c(127): warning: no newline at end of file [-Wnewline-eof]
          ^
 7 warnings generated.
 compiling clock.c...
-Timer.c(1): warning: In file included from...
-./Timer.h(4): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-Timer.c(1): warning: In file included from...
-./Timer.h(5): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-Timer.c(1): warning: In file included from...
-./Timer.h(8): warning: In file included from...
-./Interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void SysTick_Handler ();        
-                     ^
-                      void
-./Interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Enable_SYSTICK_Interrupt();
-                             ^
-                              void
-./Interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Disable_SYSTICK_Interrupt();
-                              ^
-                               void
-./Interrupt.h(12): warning: no newline at end of file [-Wnewline-eof]
-#endif /* INTERRUPT_H_ */
-                         ^
-Timer.c(1): warning: In file included from...
-./Timer.h(14): warning: no newline at end of file [-Wnewline-eof]
-#endif /* TIMER_H_ */
-                     ^
-Timer.c(6): warning: // comments are not allowed in this language [-Wcomment]
-extern float overflow;// took from interrup.c as extern variable
-                      ^
-Timer.c(29): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-        CLRBIT(REG(SYSTICK_BASE+SYSTICK_CTRL),ENABLE_timer_bit); //DISABLE SYSTICK 
-        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-9 warnings generated.
-compiling Timer.c...
-APP.c(1): warning: In file included from...
-./APP.h(4): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(5): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-APP.c(1): warning: In file included from...
-./APP.h(4): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-APP.c(1): warning: In file included from...
-./APP.h(5): warning: In file included from...
-./Timer.h(8): warning: In file included from...
-./Interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void SysTick_Handler ();        
-                     ^
-                      void
-./Interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Enable_SYSTICK_Interrupt();
-                             ^
-                              void
-./Interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Disable_SYSTICK_Interrupt();
-                              ^
-                               void
-./Interrupt.h(12): warning: no newline at end of file [-Wnewline-eof]
-#endif /* INTERRUPT_H_ */
-                         ^
-APP.c(1): warning: In file included from...
-./APP.h(5): warning: In file included from...
-./Timer.h(14): warning: no newline at end of file [-Wnewline-eof]
-#endif /* TIMER_H_ */
-                     ^
-APP.c(1): warning: In file included from...
-./APP.h(8): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void APP_init();
-             ^
-              void
-./APP.h(11): warning: no newline at end of file [-Wnewline-eof]
-#endif /* APP_APP_H_ */
-                       ^
-APP.c(5): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void APP_init()
-             ^
-              void
-APP.c(8): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
-        GPIO_PIN_init_st mystruct2 ={OUTPUT,2,PORTF,DRIVE_8mA,NO_PU_PD};
-                         ^
-APP.c(5): warning: no previous prototype for function 'APP_init' [-Wmissing-prototypes]
-void APP_init()
-     ^
-./APP.h(8): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
-void APP_init();
-     ^
-              void
-APP.c(1): warning: In file included from...
-./APP.h(6): warning: In file included from...
-./GPIO.h(28): warning: padding struct 'GPIO_PIN_init_st' with 1 byte to align 'DRIVE' [-Wpadded]
-        GPIO_DRIVE DRIVE;
-                   ^
-APP.c(23): warning: no newline at end of file [-Wnewline-eof]
-}
- ^
-APP.c(14): warning: function 'APP_Set_On_Off_time' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
-15 warnings generated.
-compiling APP.c...
-main.c(2): warning: In file included from...
-./APP.h(4): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(5): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-main.c(2): warning: In file included from...
-./APP.h(4): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-main.c(2): warning: In file included from...
-./APP.h(5): warning: In file included from...
-./Timer.h(8): warning: In file included from...
-./Interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void SysTick_Handler ();        
-                     ^
-                      void
-./Interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Enable_SYSTICK_Interrupt();
-                             ^
-                              void
-./Interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Disable_SYSTICK_Interrupt();
-                              ^
-                               void
-./Interrupt.h(12): warning: no newline at end of file [-Wnewline-eof]
-#endif /* INTERRUPT_H_ */
-                         ^
-main.c(2): warning: In file included from...
-./APP.h(5): warning: In file included from...
-./Timer.h(14): warning: no newline at end of file [-Wnewline-eof]
-#endif /* TIMER_H_ */
-                     ^
-main.c(2): warning: In file included from...
-./APP.h(8): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void APP_init();
-             ^
-              void
-./APP.h(11): warning: no newline at end of file [-Wnewline-eof]
-#endif /* APP_APP_H_ */
-                       ^
-9 warnings generated.
-compiling main.c...
 Interrupt.c(1): warning: non-portable path to file '"Interrupt.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
 #include "interrupt.h"
          ^~~~~~~~~~~~~
@@ -275,42 +146,42 @@ float overflow=0;
 Interrupt.c(5): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 float overflow=0;
 ^
-Interrupt.c(8): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+Interrupt.c(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
 void Enable_SYSTICK_Interrupt()
                              ^
                               void
-Interrupt.c(8): warning: no previous prototype for function 'Enable_SYSTICK_Interrupt' [-Wmissing-prototypes]
+Interrupt.c(9): warning: no previous prototype for function 'Enable_SYSTICK_Interrupt' [-Wmissing-prototypes]
 void Enable_SYSTICK_Interrupt()
      ^
 ./interrupt.h(10): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
 void Enable_SYSTICK_Interrupt();
      ^
                               void
-Interrupt.c(14): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+Interrupt.c(15): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
 void Disable_SYSTICK_Interrupt()
                               ^
                                void
-Interrupt.c(16): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+Interrupt.c(17): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
 CLRBIT(REG(SYSTICK_BASE+SYSTICK_CTRL),ENABLE_SYSTICKBIT);
 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ./BitMath.h(6): note: expanded from macro 'CLRBIT'
 #define CLRBIT(reg,n)   (reg &= ~(1<<n))
                              ~~ ^~~~~~~
-Interrupt.c(14): warning: no previous prototype for function 'Disable_SYSTICK_Interrupt' [-Wmissing-prototypes]
+Interrupt.c(15): warning: no previous prototype for function 'Disable_SYSTICK_Interrupt' [-Wmissing-prototypes]
 void Disable_SYSTICK_Interrupt()
      ^
 ./interrupt.h(11): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
 void Disable_SYSTICK_Interrupt();
      ^
                                void
-Interrupt.c(19): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+Interrupt.c(20): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
 void SysTick_Handler () 
                      ^
                       void
-Interrupt.c(22): warning: no newline at end of file [-Wnewline-eof]
+Interrupt.c(23): warning: no newline at end of file [-Wnewline-eof]
 }
  ^
-Interrupt.c(19): warning: no previous prototype for function 'SysTick_Handler' [-Wmissing-prototypes]
+Interrupt.c(20): warning: no previous prototype for function 'SysTick_Handler' [-Wmissing-prototypes]
 void SysTick_Handler () 
      ^
 ./interrupt.h(9): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
@@ -319,45 +190,184 @@ void SysTick_Handler ();
                       void
 16 warnings generated.
 compiling Interrupt.c...
-GPIO.c(1): warning: In file included from...
+Timer.c(1): warning: In file included from...
+./Timer.h(4): warning: In file included from...
 ./GPIO.h(4): warning: In file included from...
 ./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
  
  ^
-GPIO.c(1): warning: In file included from...
+Timer.c(1): warning: In file included from...
+./Timer.h(4): warning: In file included from...
 ./GPIO.h(5): warning: In file included from...
 ./REGISTERS.h(6): warning: In file included from...
 ./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
         
         ^
-GPIO.c(20): warning: // comments are not allowed in this language [-Wcomment]
-        //1)
+Timer.c(1): warning: In file included from...
+./Timer.h(9): warning: In file included from...
+./Interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void SysTick_Handler ();        
+                     ^
+                      void
+./Interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void Enable_SYSTICK_Interrupt();
+                             ^
+                              void
+./Interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void Disable_SYSTICK_Interrupt();
+                              ^
+                               void
+./Interrupt.h(12): warning: no newline at end of file [-Wnewline-eof]
+#endif /* INTERRUPT_H_ */
+                         ^
+Timer.c(1): warning: In file included from...
+./Timer.h(15): warning: no newline at end of file [-Wnewline-eof]
+#endif /* TIMER_H_ */
+                     ^
+Timer.c(6): warning: // comments are not allowed in this language [-Wcomment]
+extern float overflow;// took from interrup.c as extern variable
+                      ^
+Timer.c(29): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        CLRBIT(REG(SYSTICK_BASE+SYSTICK_CTRL),ENABLE_timer_bit); //DISABLE SYSTICK 
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./BitMath.h(6): note: expanded from macro 'CLRBIT'
+#define CLRBIT(reg,n)   (reg &= ~(1<<n))
+                             ~~ ^~~~~~~
+9 warnings generated.
+compiling Timer.c...
+APP.c(1): warning: In file included from...
+./APP.h(5): warning: In file included from...
+./LED.h(12): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+APP.c(1): warning: In file included from...
+./APP.h(6): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(5): warning: In file included from...
+./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
+ 
+ ^
+APP.c(1): warning: In file included from...
+./APP.h(6): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(6): warning: In file included from...
+./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
+        
         ^
-GPIO.c(1): warning: In file included from...
+APP.c(1): warning: In file included from...
+./APP.h(7): warning: In file included from...
+./Timer.h(9): warning: In file included from...
+./Interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void SysTick_Handler ();        
+                     ^
+                      void
+./Interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void Enable_SYSTICK_Interrupt();
+                             ^
+                              void
+./Interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void Disable_SYSTICK_Interrupt();
+                              ^
+                               void
+./Interrupt.h(12): warning: no newline at end of file [-Wnewline-eof]
+#endif /* INTERRUPT_H_ */
+                         ^
+APP.c(1): warning: In file included from...
+./APP.h(7): warning: In file included from...
+./Timer.h(15): warning: no newline at end of file [-Wnewline-eof]
+#endif /* TIMER_H_ */
+                     ^
+APP.c(1): warning: In file included from...
+./APP.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void APP_init();
+             ^
+              void
+./APP.h(13): warning: no newline at end of file [-Wnewline-eof]
+#endif /* APP_APP_H_ */
+                       ^
+APP.c(5): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void APP_init()
+             ^
+              void
+APP.c(8): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        GPIO_PIN_init_st mystruct2 ={OUTPUT,BLUE_LED,PORTF,DRIVE_8mA,NO_PU_PD};
+                         ^
+APP.c(5): warning: no previous prototype for function 'APP_init' [-Wmissing-prototypes]
+void APP_init()
+     ^
+./APP.h(10): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+void APP_init();
+     ^
+              void
+APP.c(1): warning: In file included from...
+./APP.h(7): warning: In file included from...
+./Timer.h(4): warning: In file included from...
 ./GPIO.h(28): warning: padding struct 'GPIO_PIN_init_st' with 1 byte to align 'DRIVE' [-Wpadded]
         GPIO_DRIVE DRIVE;
                    ^
-GPIO.c(227): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTA_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(230): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTB_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(233): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTC_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(236): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTD_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(239): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTE_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(242): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTF_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-10 warnings generated.
-compiling GPIO.c...
-assembling startup_TM4C123.s...
+APP.c(24): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+APP.c(15): warning: function 'APP_Set_On_Off_time' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+16 warnings generated.
+compiling APP.c...
+main.c(2): warning: In file included from...
+./APP.h(5): warning: In file included from...
+./LED.h(12): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(2): warning: In file included from...
+./APP.h(6): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(5): warning: In file included from...
+./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
+ 
+ ^
+main.c(2): warning: In file included from...
+./APP.h(6): warning: In file included from...
+./clock.h(4): warning: In file included from...
+./REGISTERS.h(6): warning: In file included from...
+./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+main.c(2): warning: In file included from...
+./APP.h(7): warning: In file included from...
+./Timer.h(9): warning: In file included from...
+./Interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void SysTick_Handler ();        
+                     ^
+                      void
+./Interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void Enable_SYSTICK_Interrupt();
+                             ^
+                              void
+./Interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void Disable_SYSTICK_Interrupt();
+                              ^
+                               void
+./Interrupt.h(12): warning: no newline at end of file [-Wnewline-eof]
+#endif /* INTERRUPT_H_ */
+                         ^
+main.c(2): warning: In file included from...
+./APP.h(7): warning: In file included from...
+./Timer.h(15): warning: no newline at end of file [-Wnewline-eof]
+#endif /* TIMER_H_ */
+                     ^
+main.c(2): warning: In file included from...
+./APP.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void APP_init();
+             ^
+              void
+./APP.h(13): warning: no newline at end of file [-Wnewline-eof]
+#endif /* APP_APP_H_ */
+                       ^
+main.c(6): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+APP_Set_On_Off_time(2,0.1);     
+~~~~~~~~~~~~~~~~~~~   ^~~
+11 warnings generated.
+compiling main.c...
 RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
 C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
 C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
@@ -497,10 +507,11 @@ RTE/Device/TM4C123GH6PM/system_TM4C123.c(19): warning: // comments are not allow
 ^
 45 warnings generated.
 compiling system_TM4C123.c...
+assembling startup_TM4C123.s...
 linking...
-Program Size: Code=3388 RO-data=636 RW-data=0 ZI-data=616  
+Program Size: Code=3392 RO-data=636 RW-data=0 ZI-data=616  
 FromELF: creating hex file...
-".\Objects\test1.axf" - 0 Error(s), 112 Warning(s).
+".\Objects\test1.axf" - 0 Error(s), 114 Warning(s).
 
 <h2>Software Packages used:</h2>
 

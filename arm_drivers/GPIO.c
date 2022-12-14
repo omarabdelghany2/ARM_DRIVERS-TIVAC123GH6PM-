@@ -13,7 +13,7 @@ void GPIO_intialize_pin(GPIO_PIN_init_st pin_st)
 {
 	/*
 	1)FIRST IWIL DIGITAL ENABLE THE PIN
-	2) SIT THE PIN AS OUTPUT OR INPUT
+	2)SIT THE PIN AS OUTPUT OR INPUT
 	3)MAKE THE DRIVE SPEED AS WANTED
 	4)MAKE THE PAD AS WANTED 
 	*/
@@ -21,7 +21,7 @@ void GPIO_intialize_pin(GPIO_PIN_init_st pin_st)
 	switch(pin_st.PORT)
 	{
 		case(PORTA):
-			//1)
+		//1)
 			SETBIT(GPIO_PORTA_DEN_R,pin_st.pin);
 		
 		//2)
@@ -29,7 +29,7 @@ void GPIO_intialize_pin(GPIO_PIN_init_st pin_st)
 			SETBIT(GPIO_PORTA_DIR_R,pin_st.pin);
 		else
 			CLRBIT(GPIO_PORTA_DIR_R,pin_st.pin);
-			//3)
+		//3)
 			if(pin_st.DRIVE == DRIVE_2mA)
 				SETBIT(GPIO_PORTA_DRIVE_2ma,pin_st.pin);
 			
