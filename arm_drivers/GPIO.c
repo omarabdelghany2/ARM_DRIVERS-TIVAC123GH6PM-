@@ -45,7 +45,7 @@ void GPIO_intialize_pin(GPIO_PIN_init_st pin_st)
 			else if(pin_st.PAD==PULL_DOW)
 				SETBIT(GPIO_PORTA_PAD_PULDOWN	,pin_st.pin);
 			else
-				SETBIT(GPIO_PORTC_PAD_NOUPDOWN,pin_st.pin);
+				SETBIT(GPIO_PORTA_PAD_NOUPDOWN,pin_st.pin);
 	
 			break;
 		case(PORTB):

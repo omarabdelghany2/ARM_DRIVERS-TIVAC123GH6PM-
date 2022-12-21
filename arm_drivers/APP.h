@@ -3,6 +3,7 @@
 
 
 #include "LED.h"
+#include "BUTTON.h"
 #include "clock.h"
 #include "Timer.h"
 #include "GPIO.h"

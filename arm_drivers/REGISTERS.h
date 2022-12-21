@@ -77,6 +77,8 @@ GPIO_REGSITERS
 #define GPIO_PORTE_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4002450C))		
 
 
+#define GPIO_PORTF_LCK 				(*((volatile unsigned long *)	0x40025520))
+	#define GPIO_PORTF_COMMIT 				(*((volatile unsigned long *)	0x40025524))
 #define GPIO_PORTF_DEN_R 				(*((volatile unsigned long *)	0x4002551C))
 #define GPIO_PORTF_DIR_R 				(*((volatile unsigned long *) 0x40025400))
 #define GPIO_PORTF_DATA_R 			0x40025000
