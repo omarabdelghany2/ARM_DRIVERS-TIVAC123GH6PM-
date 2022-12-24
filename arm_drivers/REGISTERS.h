@@ -78,7 +78,16 @@ GPIO_REGSITERS
 
 
 #define GPIO_PORTF_LCK 				(*((volatile unsigned long *)	0x40025520))
-	#define GPIO_PORTF_COMMIT 				(*((volatile unsigned long *)	0x40025524))
+#define GPIO_PORTF_COMMIT 				(*((volatile unsigned long *)	0x40025524))
+#define GPIO_PORTF_MIS				(*((volatile unsigned long *)	0x40025418))	/*masked interupt status to know external interrput caused by which bit*/
+#define GPIO_PORTF_ICR				(*((volatile unsigned long *)	0x4002541C))	/*interrupt clear flag this flag is rissen for the bit that has interrupt*/
+#define GPIO_PORTF_IS					(*((volatile unsigned long *)	0x40025404))  /*interrupt sense*/
+#define GPIO_PORTF_IBE				(*((volatile unsigned long *)	0x40025408)) 	/*INterrput both sides*/
+#define GPIO_PORTF_IEV				(*((volatile unsigned long *)	0x40025408))  /*INTERRUPT  EVENT  FALLING EDGE OR RISING EDGE*/
+#define GPIO_PORTF_IM				(*((volatile unsigned long *)	0x40025410))		/*INTERRUPT MASK USED TO CHOOSE THE PIN TO BE INTERRUPT*/
+
+
+	
 #define GPIO_PORTF_DEN_R 				(*((volatile unsigned long *)	0x4002551C))
 #define GPIO_PORTF_DIR_R 				(*((volatile unsigned long *) 0x40025400))
 #define GPIO_PORTF_DATA_R 			0x40025000
@@ -130,5 +139,14 @@ SYSTICK REGISTERS
 #define SYSTICK_CTRL						0x010
 #define SYSTICK_RELOAD					0x014
 #define	SYSTICK_CURRENT					0x018
+
+
+
+
+/*
+INTERRUPT REGISTERS
+*/
+
+
 
 #endif	/* REGISTERS_H_ */
