@@ -29,7 +29,10 @@ GPIO_REGSITERS
 #define GPIO_PORTA_PAD_PULUP			(*((volatile unsigned long *) 0x40004510))		
 #define GPIO_PORTA_PAD_PULDOWN		(*((volatile unsigned long *) 0x40004514))
 #define GPIO_PORTA_PAD_NOUPDOWN		(*((volatile unsigned long *) 0x40004000))			
-#define GPIO_PORTA_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4000450C))	
+#define GPIO_PORTA_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4000450C))
+#define GPIO_PORTA_AFSEL					(*((volatile unsigned long *) 0x40004420))
+#define GPIO_PORTA_AMSEL					(*((volatile unsigned long *) 0x40004528))
+#define GPIO_PORTA_PCTL			 			(*((volatile unsigned long *) 0x40004528))
 
 
 #define GPIO_PORTB_DEN_R  (*((volatile unsigned long *) 		0x4000551C))
@@ -41,7 +44,10 @@ GPIO_REGSITERS
 #define GPIO_PORTB_PAD_PULUP		(*((volatile unsigned long *) 0x40000510))
 #define GPIO_PORTB_PAD_PULDOWN	(*((volatile unsigned long *) 0x40005514))
 #define GPIO_PORTB_PAD_NOUPDOWN	(*((volatile unsigned long *) 0x40005000))			
-#define GPIO_PORTB_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4000550C))		
+#define GPIO_PORTB_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4000550C))	
+#define GPIO_PORTB_AFSEL					(*((volatile unsigned long *) 0x40005420))
+#define GPIO_PORTB_AMSEL					(*((volatile unsigned long *) 0x40005528))
+#define GPIO_PORTB_PCTL			 			(*((volatile unsigned long *) 0x40005528))	
 
 #define GPIO_PORTC_DEN_R  (*((volatile unsigned long *) 		0x4000651C))
 #define GPIO_PORTC_DIR_R  (*((volatile unsigned long *) 		0x40006400))
@@ -52,7 +58,10 @@ GPIO_REGSITERS
 #define GPIO_PORTC_PAD_PULUP			(*((volatile unsigned long *) 0x40006510))	
 #define GPIO_PORTC_PAD_PULDOWN	(*((volatile unsigned long *) 0x40006514))
 #define GPIO_PORTC_PAD_NOUPDOWN	(*((volatile unsigned long *) 0x40006000))			
-#define GPIO_PORTC_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4000650C))		
+#define GPIO_PORTC_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4000650C))
+#define GPIO_PORTC_AFSEL					(*((volatile unsigned long *) 0x40006420))
+#define GPIO_PORTC_AMSEL					(*((volatile unsigned long *) 0x40006528))
+#define GPIO_PORTC_PCTL			 			(*((volatile unsigned long *) 0x40006528))	
 
 #define GPIO_PORTD_DEN_R  (*((volatile unsigned long *)		 	0x4000751C))
 #define GPIO_PORTD_DIR_R  (*((volatile unsigned long *) 		0x40007400))
@@ -63,7 +72,10 @@ GPIO_REGSITERS
 #define GPIO_PORTD_PAD_PULUP			(*((volatile unsigned long *) 0x40007510))	
 #define GPIO_PORTD_PAD_PULDOWN	(*((volatile unsigned long *) 0x40007514))
 #define GPIO_PORTD_PAD_NOUPDOWN	(*((volatile unsigned long *) 0x40007000))			
-#define GPIO_PORTD_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4000750C))		
+#define GPIO_PORTD_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4000750C))
+#define GPIO_PORTD_AFSEL					(*((volatile unsigned long *) 0x40007420))
+#define GPIO_PORTD_AMSEL					(*((volatile unsigned long *) 0x40007528))
+#define GPIO_PORTD_PCTL			 			(*((volatile unsigned long *) 0x40007528))	
 
 #define GPIO_PORTE_DEN_R  (*((volatile unsigned long *) 		0x4002451C))
 #define GPIO_PORTE_DIR_R  (*((volatile unsigned long *)		  0x40024400))
@@ -74,7 +86,10 @@ GPIO_REGSITERS
 #define GPIO_PORTE_PAD_PULUP			(*((volatile unsigned long *) 0x40024510))	
 #define GPIO_PORTE_PAD_PULDOWN	(*((volatile unsigned long *) 0x40024514))
 #define GPIO_PORTE_PAD_NOUPDOWN	(*((volatile unsigned long *) 0x40024000))			
-#define GPIO_PORTE_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4002450C))		
+#define GPIO_PORTE_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4002450C))
+#define GPIO_PORTE_AFSEL					(*((volatile unsigned long *) 0x40024420))
+#define GPIO_PORTE_AMSEL					(*((volatile unsigned long *) 0x40024528))
+#define GPIO_PORTE_PCTL			 			(*((volatile unsigned long *) 0x40024528))	
 
 
 #define GPIO_PORTF_LCK 				(*((volatile unsigned long *)	0x40025520))
@@ -85,6 +100,7 @@ GPIO_REGSITERS
 #define GPIO_PORTF_IBE				(*((volatile unsigned long *)	0x40025408)) 	/*INterrput both sides*/
 #define GPIO_PORTF_IEV				(*((volatile unsigned long *)	0x40025408))  /*INTERRUPT  EVENT  FALLING EDGE OR RISING EDGE*/
 #define GPIO_PORTF_IM				(*((volatile unsigned long *)	0x40025410))		/*INTERRUPT MASK USED TO CHOOSE THE PIN TO BE INTERRUPT*/
+	
 
 
 	
@@ -97,7 +113,10 @@ GPIO_REGSITERS
 #define GPIO_PORTF_PAD_PULUP			(*((volatile unsigned long *)0x40025510))	
 #define GPIO_PORTF_PAD_PULDOWN		(*((volatile unsigned long *) 0x40025514))
 #define GPIO_PORTF_PAD_NOUPDOWN		(*((volatile unsigned long *) 0x40025000))			
-#define GPIO_PORTF_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4002550C))		
+#define GPIO_PORTF_PAD_OPENDRAIN	(*((volatile unsigned long *) 0x4002550C))
+#define GPIO_PORTF_AFSEL					(*((volatile unsigned long *) 0x40025420))
+#define GPIO_PORTF_AMSEL					(*((volatile unsigned long *) 0x40025528))
+#define GPIO_PORTF_PCTL			 			(*((volatile unsigned long *) 0x40025528))	
 
 
 
@@ -127,7 +146,7 @@ CLOCK REGISTERS
 
 #define GPIOHBCTL    (*((volatile uint32*)0x400FE06C))/*this register ti configure your bus*/
 #define RCGCGPIO     (*((volatile uint32*)0x400FE608)) /*this register to enable your clock or disable it */
-#define RCC          (*((volatile uint32*)0x400FE060))	 /* to choose the division in your clock*/
+#define RCC          (*((volatile uint32*)0x400FE060))	 /* to choose the division in your clock  and BYPASS  AND CLOCK SOURCE */
 	
 /*
 
@@ -149,4 +168,33 @@ INTERRUPT REGISTERS
 
 
 
+
+/*
+WatchDog timer 0 REGISTERS
+*/
+
+#define WDT0_LOAD   			(*((volatile unsigned long *)0x40000000))
+#define WDT0_VALUE				(*((volatile unsigned long *)0x40000004))
+#define WDT0_CTL					(*((volatile unsigned long *)0x40000008))	
+#define WDT0_ICR					(*((volatile unsigned long *)0x4000000C))
+#define WDT0_RIS					(*((volatile unsigned long *)0x40000010))
+#define WDT0_MIS					(*((volatile unsigned long *)0x40000014))
+#define WDT0_TEST					(*((volatile unsigned long *)0x40000418))
+#define WDT0_LOCK					(*((volatile unsigned long *)0x40000C00))	
+#define SYSCTL_RCGCWD			(*((volatile unsigned long *)0x400FE600))				
+	
+
+/*
+UART0 REGSITERS
+
+*/
+
+
+#define SYSCTL_RCGCUART (*((volatile  unsigned long *) 0x400FE618)) // TJIS ENABLE CLOCK FOR THE UART0
+#define UART0DATA        (*((volatile  unsigned long *) 0x4000C000)) // THIS TO SEND OR RECEIVE DATA
+#define UART0CTL         (*((volatile  unsigned long *) 0x4000C030)) //CONTROL REGISTER OF UART0
+#define UART0IBRD        (*((volatile  unsigned long *) 0x4000C024)) //THIS TO WIRTE IN THE INTEGER VALUE OF BAUDRATE
+#define UART0FBRD        (*((volatile  unsigned long *) 0x4000C028)) //THIS IF WRITE IN THE FLOAT VALUE OF THE BAUDRATE
+#define UART0LCRH        (*((volatile  unsigned long *) 0x4000C02C)) // CONFIGURTION REGISTER IN UART0		
+#define UART0FR       	 (*((volatile  unsigned long *) 0x4000C018)) // FLAG REGISTER	
 #endif	/* REGISTERS_H_ */

@@ -1,0 +1,68 @@
+
+#include "WatchDogTimer0.h"
+
+
+static int wtd_tolerance_count=0;
+//intialize the watchDog timer
+void WatchDog_Init(){
+/*
+	the steps
+	1)Enable the clock for WDG_0
+	2)deLAY INSTRUCTION 
+	3)RELOAD VALUE
+	4)ENABLE THE TIMER STALL -- MEANS THE WAHTCH DOG STOP WHEN DEBUGGING
+	5)ENABLE THE RESET
+	6)SELECT THE INTERRUPT TYPE
+	7)ENABLE THE INTERRUPT AND THE WATCHDogTIMER
+	8)UNLOCK THE REGISTERS TO CAN REOLAD IN RUNTIME IF YOU DONT WANT TO RELOAD WRITE ANY VALUE IN THE REGISTER
+	9)eNABLE THE WATCH DOG INTERRUPT IN THE NVIC 
+	
+	*/
+	//1)
+	SETBIT(SYSCTL_RCGCWD,0);
+	//2)
+	SETBIT(SYSCTL_RCGCWD,0);
+	//3)
+	WDT0_LOAD =0xFFFFFFFF;
+	//4)
+	SETBIT(WDT0_TEST,8);//ENABLE THE TIMER STALL SO THE WATCH DOG HALT IN DEBUG
+	//)5
+	SETBIT(WDT0_CTL,1); //RESET ENABLE
+	
+	
+	
+	//6)
+	#if (WatchDogTimer0Type==StdInterrupt) //INTERRUPT TYPE CHOOSING
+		CLRBIT(WDT0_CTL,2);
+
+	#elif (WatchDogTimer0Type==nonMaskableInterrupt)
+		SETBIT(WDT0_CTL,2)
+	
+	#endif
+	
+	
+	//7)
+	SETBIT(WDT0_CTL,0);//ENABLE INTERRUPTS AND ENABLE THE WATHCDOG BY THE WAY ON THE SAME BIT0
+	
+	//8)
+	WDT0_LOCK=0x1ACCE551; //writing any value to lock the regsiters if you want  to unlock write 0x1ACCE551
+	//9)
+	SETBIT(REG(0xE000E100),18); //ENABLE WATCHDOGTIMER INTERRUPT  HE IS THE 18 BIT IN 124 BIT INTERRUPT TABLE
+}
+
+
+
+
+void WatchDog_Refresh(){
+
+	WDT0_LOAD=0xFC4B400U;
+
+} //WatchDog Reneable by loading the Load registers
+
+
+
+
+void WDT0_Handler(){
+
+	GPIO_WRITE(PORTF,1,HIGH);
+}		//the interrupt handler

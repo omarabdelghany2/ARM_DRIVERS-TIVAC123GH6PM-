@@ -33,7 +33,33 @@ LFIOSC
 
 #define CLOCK_SOURCE             PIOSC
 #define PLL_MODE								 ENABLE
-#define SYS_DIV									 SYSDIV_12
+#define SYS_DIV									 SYSDIV_5
+
+
+
+
+/*
+
+
+
+WATCHDOG TIMER 0 INTERRUPT TYPE 
+
+nonMaskableInterrupt
+StdInterrupt
+*/
+
+#define WatchDogTimer0Type		StdInterrupt
+
+
+
+/*UART0 BAUDRATE
+115200
+9600
+*/
+
+#define UART0_BAUDRATE			115200
 #endif
 
+ 
+ 
  

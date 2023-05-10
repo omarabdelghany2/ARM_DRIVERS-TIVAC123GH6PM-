@@ -2,12 +2,12 @@
 
 
 
-void CLOCK_voidInit(void)
+	void CLOCK_voidInit(void)
 {
 		#if (CLOCK_SOURCE == MOSC)
-        CLRBIT(RCC , 0);        /* main osc enable */
-        CLRBIT(RCC , 4);        /*OSCSRC*/
-        CLRBIT(RCC , 5);
+							CLRBIT(RCC , 0);        /* main osc enable */
+						CLRBIT(RCC , 4);        /*OSCSRC*/
+						CLRBIT(RCC , 5);
 
     #elif (CLOCK_SOURCE == PIOSC)
             SETBIT(RCC , 4);

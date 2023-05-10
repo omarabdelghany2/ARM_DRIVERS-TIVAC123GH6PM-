@@ -8,7 +8,8 @@
 #include "Timer.h"
 #include "GPIO.h"
 #include "Interrupt.h"
-
+#include "WatchDogTimer0.h"
+#include "UART0.h"
 void APP_init();
 void APP_Set_On_Off_time(float ON_delay,float OFF_delay);
 

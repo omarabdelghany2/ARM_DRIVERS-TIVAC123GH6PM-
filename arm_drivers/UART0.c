@@ -1,0 +1,70 @@
+#include "UART0.h"
+
+
+void UART0_Init(){
+/*STEPS
+	
+	1)AVTIVATE THE CLOCK FOR UART0
+	2)ACTIVATE CLOCK FOR PORTA BECAUSE UART0 PINS IN PORTA
+	3)DISABLE UART TO BEGIN THE UART
+	4)CONFIGURE THE BAUD RATE BY WIRITNG THE INT AND FLOAT DIVIDERS IN THERI REGSISTERS
+	5)CONFIGURE THE DATA LENGTH AND THE FIFO 
+	6)ENABLE THE TRASNMISSION ,RECEPTION OF THE UART
+	7)DISABLE THE ANALOG FUNCTIONALITY OF THE PORT
+	8)make the pins of porta 0,1 as UART pins for PCTL register 
+	9)ENABLE THE DIGITAL OUTPUT OF THE PIN*/	
+	
+//1)
+SETBIT(SYSCTL_RCGCUART,0);
+//2)
+	GPIOClockSet(PORTA);
+//3)
+CLRBIT(UART0CTL,0);
+//4)
+	#if (UART0_BAUDRATE==115200)
+			//DO SOMETHING
+			UART0IBRD=2;
+			UART0FBRD=11;
+	
+	#elif (UART0_BAUDRATE==9600)
+			UART0IBRD=26;
+			UART0FBRD=3	;
+	#endif
+	
+//5)lets make it send 8bit and enable FIFO and make it 1 stop bit bit 5,6 for 8bit make it 11 ,,bit 4 FEN make it 1 and bit 3 STP2 make it 0 to be 1 stop bit
+	SETBIT(UART0LCRH,5);
+	SETBIT(UART0LCRH,6);
+	SETBIT(UART0LCRH,4);
+	CLRBIT(UART0LCRH,3);
+//6) SET BIT 0 UARTEN  SET BIT 8,9 TXE ,RXE
+	SETBIT(UART0CTL,0);
+	SETBIT(UART0CTL,8);
+	SETBIT(UART0CTL,9);
+	
+	//7) disable the analog functionality of the pins 0,1 IN PORTA
+	
+	CLRBIT(GPIO_PORTA_AMSEL,0);
+	CLRBIT(GPIO_PORTA_AMSEL,1);
+	
+	//8)MAKE PIN 0,1 IN PORTA AS UART 
+	GPIO_PORTA_PCTL=(GPIO_PORTA_PCTL&0xFFFFFF00)+0x00000011;
+	//9)
+	SETBIT(GPIO_PORTA_DEN_R,0);
+	SETBIT(GPIO_PORTA_DEN_R,1);
+	
+}
+
+void UART0_Transmit(uint8 sendByte){
+
+	
+		while((UART0FR&0x20)!=0) ;
+			UART0DATA=sendByte;
+
+}
+
+uint8 UART_Receiver(){
+    uint8 data;
+	  while((UART0FR & (0x10) != 0); /* wait until Rx buffer is not full */
+    data = UART0DATA ;  	/* before giving it another byte */
+    return  data; 
+}

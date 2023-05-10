@@ -1,2 +1,6 @@
-./objects/clock.o: clock.c clock.h REGISTERS.h CONFIG.h STD_Types.h \
-  BitMath.h
+.\objects\clock.o: clock.c
+.\objects\clock.o: clock.h
+.\objects\clock.o: REGISTERS.h
+.\objects\clock.o: CONFIG.h
+.\objects\clock.o: STD_Types.h
+.\objects\clock.o: BitMath.h

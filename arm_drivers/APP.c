@@ -11,6 +11,7 @@ float OFF_DELAY=0;
 
 void APP_init()
 {
+	CLOCK_voidInit();
 	GPIOClockSet(PORTF);
 	GPIO_PORTF_LCK |= 0x4C4F434B;
 	GPIO_PORTF_COMMIT |= 0x00000001;
@@ -31,6 +32,9 @@ void APP_init()
 
 
 	ENABLE_EXTERNAL_INTERRUPT_PORTF();
+	
+	//WatchDog_Init();
+	UART0_Init();
 	
 
 }
@@ -66,11 +70,14 @@ void APP_Set_On_Off_time(float ON_start,float OFF_start)
 	OFF_DELAY=OFF_start;
 	while(1)
 	{
+	/*
 		GPIO_WRITE(PORTF,1,HIGH);
 		my_delay(ON_DELAY);
 		GPIO_WRITE(PORTF,1,LOW);
 		my_delay(OFF_DELAY);
-
-
+*/
+	
+	
 	}
 }
+

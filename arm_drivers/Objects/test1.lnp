@@ -3,6 +3,8 @@
 ".\objects\gpio.o"
 ".\objects\timer.o"
 ".\objects\interrupt_1.o"
+".\objects\watchdogtimer0.o"
+".\objects\uart0.o"
 ".\objects\app.o"
 ".\objects\main_1.o"
 ".\objects\startup_tm4c123.o"

@@ -3,628 +3,208 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.38.0.0
-Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: omar abdelghany, Crocomarine, LIC=----
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: omar abdelghany, CrocoMarine, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.38.0.0
-Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.19
-Assembler:       Armasm.exe V6.19
-Linker/Locator:  ArmLink.exe V6.19
-Library Manager: ArmAr.exe V6.19
-Hex Converter:   FromElf.exe V6.19
-CPU DLL:         SARMCM3.DLL V5.38.0.0
-Dialog DLL:      DCM.DLL V1.17.5.0
+Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
 Target DLL:      lmidk-agdi.dll V???
-Dialog DLL:      TCM.DLL V1.56.4.0
+Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
-C:\Users\pc\Documents\Arm_WorkSpace\ARM_DRIVERS-TIVAC123GH6PM-\arm_drivers\test1.uvprojx
-Project File Date:  12/20/2022
+C:\Users\omarz\Documents\Arm_WorkSpace\ARM_DRIVERS-TIVAC123GH6PM-\arm_drivers\test1.uvprojx
+Project File Date:  05/10/2023
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
-Note: source file '.\Interrupt.c' - object file renamed from '.\Objects\Interrupt.o' to '.\Objects\interrupt_1.o'.
-Note: source file '.\main.c' - object file renamed from '.\Objects\main.o' to '.\Objects\main_1.o'.
-Interrupt.c(1): warning: non-portable path to file '"Interrupt.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
-#include "interrupt.h"
-         ^~~~~~~~~~~~~
-         "Interrupt.h"
-Interrupt.c(1): warning: In file included from...
-./interrupt.h(5): warning: In file included from...
-./REGISTERS.h(5): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-Interrupt.c(1): warning: In file included from...
-./interrupt.h(5): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-Interrupt.c(1): warning: In file included from...
-./interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void SysTick_Handler ();        
-                     ^
-                      void
-./interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Enable_SYSTICK_Interrupt();
-                             ^
-                              void
-./interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Disable_SYSTICK_Interrupt();
-                              ^
-                               void
-./interrupt.h(12): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void GPIOF_Handler ();
-                   ^
-                    void
-./interrupt.h(13): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void ENABLE_EXTERNAL_INTERRUPT();
-                              ^
-                               void
-./interrupt.h(14): warning: no newline at end of file [-Wnewline-eof]
-#endif /* INTERRUPT_H_ */
-                         ^
-Interrupt.c(7): warning: no previous extern declaration for non-static variable 'overflow' [-Wmissing-variable-declarations]
-float overflow=0;
-      ^
-Interrupt.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-float overflow=0;
-^
-Interrupt.c(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Enable_SYSTICK_Interrupt()
-                             ^
-                              void
-Interrupt.c(11): warning: no previous prototype for function 'Enable_SYSTICK_Interrupt' [-Wmissing-prototypes]
-void Enable_SYSTICK_Interrupt()
-     ^
-./interrupt.h(10): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
-void Enable_SYSTICK_Interrupt();
-     ^
-                              void
-Interrupt.c(17): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Disable_SYSTICK_Interrupt()
-                              ^
-                               void
-Interrupt.c(19): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-CLRBIT(REG(SYSTICK_BASE+SYSTICK_CTRL),ENABLE_SYSTICKBIT);
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-Interrupt.c(17): warning: no previous prototype for function 'Disable_SYSTICK_Interrupt' [-Wmissing-prototypes]
-void Disable_SYSTICK_Interrupt()
-     ^
-./interrupt.h(11): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
-void Disable_SYSTICK_Interrupt();
-     ^
-                               void
-Interrupt.c(22): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void SysTick_Handler () 
-                     ^
-                      void
-Interrupt.c(22): warning: no previous prototype for function 'SysTick_Handler' [-Wmissing-prototypes]
-void SysTick_Handler () 
-     ^
-./interrupt.h(9): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
-void SysTick_Handler ();        
-     ^
-                      void
-Interrupt.c(36): warning: // comments are not allowed in this language [-Wcomment]
-void ENABLE_EXTERNAL_INTERRUPT_PORTF()//ENABLE BIT 0,4
-                                      ^
-Interrupt.c(36): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void ENABLE_EXTERNAL_INTERRUPT_PORTF()//ENABLE BIT 0,4
-                                    ^
-                                     void
-Interrupt.c(44): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-        CLRBIT(GPIO_PORTF_IS,0);  /*CLEARING THE BIT TO BE EDGE TRIGERED OF U WANT TO MAKE IT LEVEL SENSETIVE USE SETBIT*/
-        ^~~~~~~~~~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-Interrupt.c(45): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-        CLRBIT(GPIO_PORTF_IS,4);        /*CLEARING THE BIT TO BE EDGE TRIGERED OF U WANT TO MAKE IT LEVEL SENSETIVE USE SETBIT*/
-        ^~~~~~~~~~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-Interrupt.c(47): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-        CLRBIT(GPIO_PORTF_IEV,0); /*CLEARING THE BIT TO MAKE IT FALLING EDGE TRIGGERED*/
-        ^~~~~~~~~~~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-Interrupt.c(48): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-        CLRBIT(GPIO_PORTF_IEV,4);       /*CLEARING THE BIT TO MAKE IT FALLING EDGE TRIGGERED*/
-        ^~~~~~~~~~~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-Interrupt.c(36): warning: no previous prototype for function 'ENABLE_EXTERNAL_INTERRUPT_PORTF' [-Wmissing-prototypes]
-void ENABLE_EXTERNAL_INTERRUPT_PORTF()//ENABLE BIT 0,4
-     ^
-Interrupt.c(36): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void ENABLE_EXTERNAL_INTERRUPT_PORTF()//ENABLE BIT 0,4
-^
-static 
-Interrupt.c(3): warning: no previous extern declaration for non-static variable 'offset1' [-Wmissing-variable-declarations]
-float offset1;
-      ^
-Interrupt.c(3): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-float offset1;
-^
-Interrupt.c(4): warning: no previous extern declaration for non-static variable 'offset2' [-Wmissing-variable-declarations]
-float offset2;
-      ^
-Interrupt.c(4): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-float offset2;
-^
-26 warnings generated.
-compiling Interrupt.c...
-main.c(2): warning: In file included from...
-./APP.h(5): warning: In file included from...
-./LED.h(12): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-main.c(2): warning: In file included from...
-./APP.h(7): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(5): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-main.c(2): warning: In file included from...
-./APP.h(7): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-main.c(2): warning: In file included from...
-./APP.h(8): warning: In file included from...
-./Timer.h(9): warning: In file included from...
-./Interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void SysTick_Handler ();        
-                     ^
-                      void
-./Interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Enable_SYSTICK_Interrupt();
-                             ^
-                              void
-./Interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Disable_SYSTICK_Interrupt();
-                              ^
-                               void
-./Interrupt.h(12): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void GPIOF_Handler ();
-                   ^
-                    void
-./Interrupt.h(13): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void ENABLE_EXTERNAL_INTERRUPT();
-                              ^
-                               void
-./Interrupt.h(14): warning: no newline at end of file [-Wnewline-eof]
-#endif /* INTERRUPT_H_ */
-                         ^
-main.c(2): warning: In file included from...
-./APP.h(8): warning: In file included from...
-./Timer.h(15): warning: no newline at end of file [-Wnewline-eof]
-#endif /* TIMER_H_ */
-                     ^
-main.c(2): warning: In file included from...
-./APP.h(12): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void APP_init();
-             ^
-              void
-./APP.h(15): warning: no newline at end of file [-Wnewline-eof]
-#endif /* APP_APP_H_ */
-                       ^
-main.c(8): warning: // comments are not allowed in this language [-Wcomment]
-APP_Set_On_Off_time(2,2);       //WE START WITH 1 SECOND ON AND 1 SECONDS OFF
-                                ^
-13 warnings generated.
-compiling main.c...
-clock.c(1): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(5): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-clock.c(1): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-clock.c(14): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-            CLRBIT(RCC , 5);
-            ^~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-clock.c(26): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-            CLRBIT(RCC , 11);               /*BYPASS*/
-            ^~~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-clock.c(27): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-            CLRBIT(RCC , 13);
-            ^~~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-clock.c(95): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-            CLRBIT(RCC,25);
-            ^~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-clock.c(127): warning: no newline at end of file [-Wnewline-eof]
-        }
-         ^
-7 warnings generated.
-compiling clock.c...
-Timer.c(1): warning: In file included from...
-./Timer.h(4): warning: In file included from...
-./GPIO.h(4): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-Timer.c(1): warning: In file included from...
-./Timer.h(4): warning: In file included from...
-./GPIO.h(5): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-Timer.c(1): warning: In file included from...
-./Timer.h(9): warning: In file included from...
-./Interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void SysTick_Handler ();        
-                     ^
-                      void
-./Interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Enable_SYSTICK_Interrupt();
-                             ^
-                              void
-./Interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Disable_SYSTICK_Interrupt();
-                              ^
-                               void
-./Interrupt.h(12): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void GPIOF_Handler ();
-                   ^
-                    void
-./Interrupt.h(13): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void ENABLE_EXTERNAL_INTERRUPT();
-                              ^
-                               void
-./Interrupt.h(14): warning: no newline at end of file [-Wnewline-eof]
-#endif /* INTERRUPT_H_ */
-                         ^
-Timer.c(1): warning: In file included from...
-./Timer.h(15): warning: no newline at end of file [-Wnewline-eof]
-#endif /* TIMER_H_ */
-                     ^
-Timer.c(6): warning: // comments are not allowed in this language [-Wcomment]
-extern float overflow;// took from interrup.c as extern variable
-                      ^
-Timer.c(29): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-        CLRBIT(REG(SYSTICK_BASE+SYSTICK_CTRL),ENABLE_timer_bit); //DISABLE SYSTICK 
-        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./BitMath.h(6): note: expanded from macro 'CLRBIT'
-#define CLRBIT(reg,n)   (reg &= ~(1<<n))
-                             ~~ ^~~~~~~
-11 warnings generated.
 compiling Timer.c...
-APP.c(1): warning: In file included from...
-./APP.h(5): warning: In file included from...
-./LED.h(12): warning: no newline at end of file [-Wnewline-eof]
-#endif
-      ^
-APP.c(1): warning: In file included from...
-./APP.h(7): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(5): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-APP.c(1): warning: In file included from...
-./APP.h(7): warning: In file included from...
-./clock.h(4): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-APP.c(1): warning: In file included from...
-./APP.h(8): warning: In file included from...
-./Timer.h(9): warning: In file included from...
-./Interrupt.h(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void SysTick_Handler ();        
-                     ^
-                      void
-./Interrupt.h(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Enable_SYSTICK_Interrupt();
-                             ^
-                              void
-./Interrupt.h(11): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void Disable_SYSTICK_Interrupt();
-                              ^
-                               void
-./Interrupt.h(12): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void GPIOF_Handler ();
-                   ^
-                    void
-./Interrupt.h(13): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void ENABLE_EXTERNAL_INTERRUPT();
-                              ^
-                               void
-./Interrupt.h(14): warning: no newline at end of file [-Wnewline-eof]
-#endif /* INTERRUPT_H_ */
-                         ^
-APP.c(1): warning: In file included from...
-./APP.h(8): warning: In file included from...
-./Timer.h(15): warning: no newline at end of file [-Wnewline-eof]
-#endif /* TIMER_H_ */
-                     ^
-APP.c(1): warning: In file included from...
-./APP.h(12): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void APP_init();
-             ^
-              void
-./APP.h(15): warning: no newline at end of file [-Wnewline-eof]
-#endif /* APP_APP_H_ */
-                       ^
-APP.c(9): warning: no previous extern declaration for non-static variable 'ON_DELAY' [-Wmissing-variable-declarations]
-float ON_DELAY=0;
-      ^
-APP.c(9): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-float ON_DELAY=0;
-^
-APP.c(10): warning: no previous extern declaration for non-static variable 'OFF_DELAY' [-Wmissing-variable-declarations]
-float OFF_DELAY=0;
-      ^
-APP.c(10): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-float OFF_DELAY=0;
-^
-APP.c(12): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void APP_init()
-             ^
-              void
-APP.c(33): warning: implicit declaration of function 'ENABLE_EXTERNAL_INTERRUPT_PORTF' [-Wimplicit-function-declaration]
-        ENABLE_EXTERNAL_INTERRUPT_PORTF();
-        ^
-APP.c(19): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
-        GPIO_PIN_init_st mystruct1 ={OUTPUT,BLUE_LED,PORTF,DRIVE_8mA,NO_PU_PD};
-                         ^
-APP.c(12): warning: no previous prototype for function 'APP_init' [-Wmissing-prototypes]
-void APP_init()
-     ^
-./APP.h(12): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
-void APP_init();
-     ^
-              void
-APP.c(1): warning: In file included from...
-./APP.h(8): warning: In file included from...
-./Timer.h(4): warning: In file included from...
-./GPIO.h(28): warning: padding struct 'GPIO_PIN_init_st' with 1 byte to align 'DRIVE' [-Wpadded]
-        GPIO_DRIVE DRIVE;
-                   ^
-APP.c(39): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-void GPIOF_Handler ()
-                   ^
-                    void
-APP.c(39): warning: no previous prototype for function 'GPIOF_Handler' [-Wmissing-prototypes]
-void GPIOF_Handler ()
-     ^
-./Interrupt.h(12): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
-void GPIOF_Handler ();
-     ^
-                    void
-APP.c(76): warning: no newline at end of file [-Wnewline-eof]
-}
- ^
-APP.c(64): warning: function 'APP_Set_On_Off_time' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
-23 warnings generated.
-compiling APP.c...
-assembling startup_TM4C123.s...
-GPIO.c(1): warning: In file included from...
-./GPIO.h(4): warning: In file included from...
-./CONFIG.h(39): warning: no newline at end of file [-Wnewline-eof]
- 
- ^
-GPIO.c(1): warning: In file included from...
-./GPIO.h(5): warning: In file included from...
-./REGISTERS.h(6): warning: In file included from...
-./STD_Types.h(18): warning: no newline at end of file [-Wnewline-eof]
-        
-        ^
-GPIO.c(20): warning: // comments are not allowed in this language [-Wcomment]
-        //1)
-        ^
-GPIO.c(1): warning: In file included from...
-./GPIO.h(28): warning: padding struct 'GPIO_PIN_init_st' with 1 byte to align 'DRIVE' [-Wpadded]
-        GPIO_DRIVE DRIVE;
-                   ^
-GPIO.c(227): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTA_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(230): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTB_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(233): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTC_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(236): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTD_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(239): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTE_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-GPIO.c(242): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                                value=REG(GPIO_PORTF_DATA_R+0x3FC)&(1<<pin);
-                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-10 warnings generated.
+CONFIG.h(65): warning:  #1-D: last line of file ends without a newline
+   
+STD_Types.h(18): warning:  #1-D: last line of file ends without a newline
+  	
+Interrupt.h(9): warning:  #1295-D: Deprecated declaration SysTick_Handler - give arg types
+  void SysTick_Handler ();	
+Interrupt.h(10): warning:  #1295-D: Deprecated declaration Enable_SYSTICK_Interrupt - give arg types
+  void Enable_SYSTICK_Interrupt();
+Interrupt.h(11): warning:  #1295-D: Deprecated declaration Disable_SYSTICK_Interrupt - give arg types
+  void Disable_SYSTICK_Interrupt();
+Interrupt.h(12): warning:  #1295-D: Deprecated declaration GPIOF_Handler - give arg types
+  void GPIOF_Handler ();
+Interrupt.h(13): warning:  #1295-D: Deprecated declaration ENABLE_EXTERNAL_INTERRUPT - give arg types
+  void ENABLE_EXTERNAL_INTERRUPT();
+Interrupt.h(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* INTERRUPT_H_ */
+Timer.h(15): warning:  #1-D: last line of file ends without a newline
+  #endif /* TIMER_H_ */
+Timer.c: 9 warnings, 0 errors
 compiling GPIO.c...
-RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(338): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(357): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(713): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(729): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(774): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(779): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(872): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(885): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(892): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(897): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(904): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(910): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(917): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(924): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(929): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(936): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(942): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(949): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(956): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(961): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(968): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(974): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(981): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(988): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(993): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1000): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1006): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1013): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1020): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1025): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1032): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1038): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1045): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1052): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1057): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1064): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1070): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1077): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1084): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1089): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1096): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1102): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1251): warning: anonymous unions are a C11 extension [-Wc11-extensions]
-  union {
-  ^
-RTE/Device/TM4C123GH6PM/system_TM4C123.c(19): warning: // comments are not allowed in this language [-Wcomment]
-//-------- <<< Use Configuration Wizard in Context Menu >>> ------------------
-^
-45 warnings generated.
+CONFIG.h(65): warning:  #1-D: last line of file ends without a newline
+   
+STD_Types.h(18): warning:  #1-D: last line of file ends without a newline
+  	
+GPIO.c: 2 warnings, 0 errors
+compiling Interrupt.c...
+CONFIG.h(65): warning:  #1-D: last line of file ends without a newline
+   
+STD_Types.h(18): warning:  #1-D: last line of file ends without a newline
+  	
+interrupt.h(9): warning:  #1295-D: Deprecated declaration SysTick_Handler - give arg types
+  void SysTick_Handler ();	
+interrupt.h(10): warning:  #1295-D: Deprecated declaration Enable_SYSTICK_Interrupt - give arg types
+  void Enable_SYSTICK_Interrupt();
+interrupt.h(11): warning:  #1295-D: Deprecated declaration Disable_SYSTICK_Interrupt - give arg types
+  void Disable_SYSTICK_Interrupt();
+interrupt.h(12): warning:  #1295-D: Deprecated declaration GPIOF_Handler - give arg types
+  void GPIOF_Handler ();
+interrupt.h(13): warning:  #1295-D: Deprecated declaration ENABLE_EXTERNAL_INTERRUPT - give arg types
+  void ENABLE_EXTERNAL_INTERRUPT();
+interrupt.h(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* INTERRUPT_H_ */
+Interrupt.c: 8 warnings, 0 errors
+compiling UART0.c...
+STD_Types.h(18): warning:  #1-D: last line of file ends without a newline
+  	
+CONFIG.h(65): warning:  #1-D: last line of file ends without a newline
+   
+UART0.h(15): warning:  #1295-D: Deprecated declaration UART0_Init - give arg types
+  void UART0_Init();
+UART0.h(17): warning:  #1295-D: Deprecated declaration UART0_READ - give arg types
+  uint8 UART0_READ();
+UART0.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif 
+UART0.c: 5 warnings, 0 errors
+compiling clock.c...
+CONFIG.h(65): warning:  #1-D: last line of file ends without a newline
+   
+STD_Types.h(18): warning:  #1-D: last line of file ends without a newline
+  	
+clock.c(127): warning:  #1-D: last line of file ends without a newline
+  	}
+clock.c: 3 warnings, 0 errors
+compiling main.c...
+LED.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+CONFIG.h(65): warning:  #1-D: last line of file ends without a newline
+   
+STD_Types.h(18): warning:  #1-D: last line of file ends without a newline
+  	
+Interrupt.h(9): warning:  #1295-D: Deprecated declaration SysTick_Handler - give arg types
+  void SysTick_Handler ();	
+Interrupt.h(10): warning:  #1295-D: Deprecated declaration Enable_SYSTICK_Interrupt - give arg types
+  void Enable_SYSTICK_Interrupt();
+Interrupt.h(11): warning:  #1295-D: Deprecated declaration Disable_SYSTICK_Interrupt - give arg types
+  void Disable_SYSTICK_Interrupt();
+Interrupt.h(12): warning:  #1295-D: Deprecated declaration GPIOF_Handler - give arg types
+  void GPIOF_Handler ();
+Interrupt.h(13): warning:  #1295-D: Deprecated declaration ENABLE_EXTERNAL_INTERRUPT - give arg types
+  void ENABLE_EXTERNAL_INTERRUPT();
+Interrupt.h(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* INTERRUPT_H_ */
+Timer.h(15): warning:  #1-D: last line of file ends without a newline
+  #endif /* TIMER_H_ */
+WatchDogTimer0.h(10): warning:  #1295-D: Deprecated declaration WatchDog_Init - give arg types
+  void WatchDog_Init(); //intialize the watchDog timer
+WatchDogTimer0.h(11): warning:  #1295-D: Deprecated declaration WatchDog_Refresh - give arg types
+  void WatchDog_Refresh(); //WatchDog Reneable by loading the Load registers
+WatchDogTimer0.h(12): warning:  #1295-D: Deprecated declaration WDT0_Handler - give arg types
+  void WDT0_Handler();		//the interrupt handler
+WatchDogTimer0.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif
+UART0.h(15): warning:  #1295-D: Deprecated declaration UART0_Init - give arg types
+  void UART0_Init();
+UART0.h(17): warning:  #1295-D: Deprecated declaration UART0_READ - give arg types
+  uint8 UART0_READ();
+UART0.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif 
+APP.h(13): warning:  #1295-D: Deprecated declaration APP_init - give arg types
+  void APP_init();
+APP.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif /* APP_APP_H_ */
+main.c: 19 warnings, 0 errors
+compiling WatchDogTimer0.c...
+CONFIG.h(65): warning:  #1-D: last line of file ends without a newline
+   
+STD_Types.h(18): warning:  #1-D: last line of file ends without a newline
+  	
+WatchDogTimer0.h(10): warning:  #1295-D: Deprecated declaration WatchDog_Init - give arg types
+  void WatchDog_Init(); //intialize the watchDog timer
+WatchDogTimer0.h(11): warning:  #1295-D: Deprecated declaration WatchDog_Refresh - give arg types
+  void WatchDog_Refresh(); //WatchDog Reneable by loading the Load registers
+WatchDogTimer0.h(12): warning:  #1295-D: Deprecated declaration WDT0_Handler - give arg types
+  void WDT0_Handler();		//the interrupt handler
+WatchDogTimer0.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif
+WatchDogTimer0.c(68): warning:  #1-D: last line of file ends without a newline
+  }		//the interrupt handler
+WatchDogTimer0.c(5): warning:  #177-D: variable "wtd_tolerance_count"  was declared but never referenced
+  static int wtd_tolerance_count=0;
+WatchDogTimer0.c: 8 warnings, 0 errors
+assembling startup_TM4C123.s...
+compiling APP.c...
+LED.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+CONFIG.h(65): warning:  #1-D: last line of file ends without a newline
+   
+STD_Types.h(18): warning:  #1-D: last line of file ends without a newline
+  	
+Interrupt.h(9): warning:  #1295-D: Deprecated declaration SysTick_Handler - give arg types
+  void SysTick_Handler ();	
+Interrupt.h(10): warning:  #1295-D: Deprecated declaration Enable_SYSTICK_Interrupt - give arg types
+  void Enable_SYSTICK_Interrupt();
+Interrupt.h(11): warning:  #1295-D: Deprecated declaration Disable_SYSTICK_Interrupt - give arg types
+  void Disable_SYSTICK_Interrupt();
+Interrupt.h(12): warning:  #1295-D: Deprecated declaration GPIOF_Handler - give arg types
+  void GPIOF_Handler ();
+Interrupt.h(13): warning:  #1295-D: Deprecated declaration ENABLE_EXTERNAL_INTERRUPT - give arg types
+  void ENABLE_EXTERNAL_INTERRUPT();
+Interrupt.h(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* INTERRUPT_H_ */
+Timer.h(15): warning:  #1-D: last line of file ends without a newline
+  #endif /* TIMER_H_ */
+WatchDogTimer0.h(10): warning:  #1295-D: Deprecated declaration WatchDog_Init - give arg types
+  void WatchDog_Init(); //intialize the watchDog timer
+WatchDogTimer0.h(11): warning:  #1295-D: Deprecated declaration WatchDog_Refresh - give arg types
+  void WatchDog_Refresh(); //WatchDog Reneable by loading the Load registers
+WatchDogTimer0.h(12): warning:  #1295-D: Deprecated declaration WDT0_Handler - give arg types
+  void WDT0_Handler();		//the interrupt handler
+WatchDogTimer0.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif
+UART0.h(15): warning:  #1295-D: Deprecated declaration UART0_Init - give arg types
+  void UART0_Init();
+UART0.h(17): warning:  #1295-D: Deprecated declaration UART0_READ - give arg types
+  uint8 UART0_READ();
+UART0.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif 
+APP.h(13): warning:  #1295-D: Deprecated declaration APP_init - give arg types
+  void APP_init();
+APP.h(16): warning:  #1-D: last line of file ends without a newline
+  #endif /* APP_APP_H_ */
+APP.c(34): warning:  #223-D: function "ENABLE_EXTERNAL_INTERRUPT_PORTF" declared implicitly
+  	ENABLE_EXTERNAL_INTERRUPT_PORTF();
+APP.c: 20 warnings, 0 errors
 compiling system_TM4C123.c...
 linking...
-Program Size: Code=3816 RO-data=636 RW-data=0 ZI-data=624  
+Program Size: Code=3524 RO-data=684 RW-data=20 ZI-data=612  
 FromELF: creating hex file...
-".\Objects\test1.axf" - 0 Error(s), 135 Warning(s).
+".\Objects\test1.axf" - 0 Error(s), 74 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
-                ARM.CMSIS.5.9.0
-                CMSIS (Common Microcontroller Software Interface Standard)
-   * Component: CORE Version: 5.6.0
+                http://www.keil.com/pack/ARM.CMSIS.5.6.0.pack
+                ARM.CMSIS.5.6.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.3.0
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
@@ -633,19 +213,19 @@ Package Vendor: Keil
    * Component: Startup Version: 1.0.1
 
 <h2>Collection of Component include folders:</h2>
-  ./RTE/_Target_1
-  C:/Users/pc/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
-  C:/Users/pc/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+  .\RTE\_Target_1
+  C:\Users\omarz\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  C:\Users\omarz\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE:5.6.0
+   * Component: ARM::CMSIS:CORE:5.3.0
 
    * Component: Keil::Device:Startup:1.0.1
-      Include file:  Device/Include/TM4C123/TM4C123.h
-      Source file:   Device/Source/system_TM4C123.c
-      Source file:   Device/Source/ARM/startup_TM4C123.s
-Build Time Elapsed:  00:00:02
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+      Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\system_TM4C123.c
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

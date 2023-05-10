@@ -1,2 +1,14 @@
-./objects/main_1.o: main.c APP.h LED.h BUTTON.h clock.h REGISTERS.h \
-  CONFIG.h STD_Types.h BitMath.h Timer.h GPIO.h Interrupt.h
+.\objects\main_1.o: main.c
+.\objects\main_1.o: APP.h
+.\objects\main_1.o: LED.h
+.\objects\main_1.o: BUTTON.h
+.\objects\main_1.o: clock.h
+.\objects\main_1.o: REGISTERS.h
+.\objects\main_1.o: CONFIG.h
+.\objects\main_1.o: STD_Types.h
+.\objects\main_1.o: BitMath.h
+.\objects\main_1.o: Timer.h
+.\objects\main_1.o: GPIO.h
+.\objects\main_1.o: Interrupt.h
+.\objects\main_1.o: WatchDogTimer0.h
+.\objects\main_1.o: UART0.h
